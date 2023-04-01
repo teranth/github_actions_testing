@@ -9,3 +9,11 @@ describe('/test endpoint', () => {
     expect(response.text).toBe('Hello, World!');
   });
 });
+
+describe('/joke endpoint', () => {
+    it('should return a response', async () => {
+        const response = await request.get('/joke');
+        expect(response.status).toBe(200);
+        expect(response.text).toBe('What do you call a bear with no teeth? A gummy bear!');
+    });
+});
